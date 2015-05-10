@@ -16,7 +16,7 @@ default: &default
   username: root
   password:
   host: localhost
-#  socket: /tmp/mysql.sock
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -50,6 +50,6 @@ test:
 #
 production:
   <<: *default
-  database: feature_tracker_production
-  username: feature_tracker
-  password: <%= ENV['FEATURE_TRACKER_DATABASE_PASSWORD'] %>
+  database: <%= ENV['DATABASE_URL'] %>
+#  username: feature_tracker
+#  password: <%= ENV['FEATURE_TRACKER_DATABASE_PASSWORD'] %>
